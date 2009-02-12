@@ -1,12 +1,12 @@
 <?php
 
-Markup('slippymap',
+Markup('openlayers',
        'directives',
-       '/\\(:slippymap(\\s+.*?)?:\\)/ei',
-       "slippymap('$1')");
+       '/\\(:openlayers(\\s+.*?)?:\\)/ei',
+       "openlayers('$1')");
 
-function slippymap($args){
-    global $HTMLHeaderFmt;
+function openlayers($args){
+    global $HTMLHeaderFmt, $HTMLFooterFmt;
     $params=ParseArgs($args); 
     $slippymap_default = array('width'=> 500,
                                'height'=> 400,
@@ -48,6 +48,7 @@ function slippymap($args){
                                   '     }'."\r\n".
                                   '</script>'."\r\n".
                                   "\r\n";
+    $HTMLFooterFmt = '<script type="text/javascript">'."\n\t".'slippymap_init();'."\n".'</script>';
     return '<div style="width: '.$width.'px; height:'.$height.'px; border-style:solid; border-width:1px; border-color:lightgrey;" id="map">
     <noscript>
         Die Nutzung der Karte setzt die Aktivierung von JavaScript voraus. 
