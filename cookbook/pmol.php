@@ -49,9 +49,9 @@ function openlayers($args){
                                   '</script>'."\r\n".
                                   "\r\n";
     $HTMLFooterFmt = '<script type="text/javascript">'."\n\t".'slippymap_init();'."\n".'</script>';
-    return '<div style="width: '.$width.'px; height:'.$height.'px; border-style:solid; border-width:1px; border-color:lightgrey;" id="map">
-    <noscript>
-        Die Nutzung der Karte setzt die Aktivierung von JavaScript voraus. 
-    </noscript>
-</div>';
+    return '<div style="width: '.$width.'px; height:'.$height.'px; border-style:solid; border-width:1px; border-color:lightgrey;" id="map">'."\n\t".
+           '<noscript>'."\n\t\t".
+           'Die Nutzung der Karte setzt die Aktivierung von JavaScript voraus.'."\n\t".
+           '</noscript>'."\n".
+           '</div>';
 }
